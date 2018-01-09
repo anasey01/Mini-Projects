@@ -1,0 +1,25 @@
+body{
+    background: #333;
+    color: #fff;
+}
+
+#weightTitle{
+    margin-top: 2rem !important;
+}
+
+/* #error {
+    visibility: hidden;
+} */
+
+/* #output {
+    visibility: hidden;
+} */
+
+footer{
+    text-align: center;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+}
