@@ -1,4 +1,5 @@
 document.getElementById("submit").addEventListener("click", saveContact);
+// document.getElementById("notify-alert").style.visibility = "hidden";
     function saveContact() {
         //Get all the data from Input
         var firstName = document.getElementById("first_name").value;
@@ -8,8 +9,8 @@ document.getElementById("submit").addEventListener("click", saveContact);
         if(!firstName || !lastName || !mobile){
             alert("please fill in all the details");
             return false;
-        }
-        //Store data in an Object
+        }else { 
+            //Store data in an Object
         var contactDetails = {
             "firstName" : firstName,
             "lastName"  : lastName,
@@ -27,6 +28,7 @@ document.getElementById("submit").addEventListener("click", saveContact);
             contacts.push(contactDetails);
             //Now store contactDetails to LocalStorage; convert Contacts to be a string.
             localStorage.setItem("contacts", JSON.stringify(contacts));
+            notifyAlert();
         }else {
             //What to do if key of contact is available in LocalStorage
             //Convert entire Item to JSON
@@ -35,5 +37,12 @@ document.getElementById("submit").addEventListener("click", saveContact);
             contacts.push(contactDetails);
             //Set Items Back to LocalStorage
             localStorage.setItem("contacts", JSON.stringify(contacts));
-        }
+            notifyAlert();
+            } 
+        }      
     }
+
+    function notifyAlert(){
+        Materialize.toast('Contact Added!', 2000);
+    }
+    
