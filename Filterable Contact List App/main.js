@@ -4,6 +4,11 @@ document.getElementById("submit").addEventListener("click", saveContact);
         var firstName = document.getElementById("first_name").value;
         var lastName  = document.getElementById("last_name").value;
         var mobile    = document.getElementById("mobilePhone").value; 
+        //Check to make sure Input value isn't empty
+        if(!firstName || !lastName || !mobile){
+            alert("please fill in all the details");
+            return false;
+        }
         //Store data in an Object
         var contactDetails = {
             "firstName" : firstName,
